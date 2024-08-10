@@ -6,28 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv_weather"
-        android:layout_width="254dp"
-        android:layout_height="355dp"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.basicweather.DailyForecastsFragment"
+        android:layout_width="374dp"
+        android:layout_height="438dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.basicweather.AccuWeatherLogoFragment"
+        android:layout_width="266dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_accuweather"
-        android:layout_width="322dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="45dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_weather"
-        app:srcCompat="@drawable/accuweather" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

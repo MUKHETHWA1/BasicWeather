@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        thread {
+      /*  thread {
             val weather = try {
                 buildURLForWeather()?.readText()
             } catch (e: Exception) {
@@ -33,18 +33,18 @@ class MainActivity : AppCompatActivity() {
             // runOnUiThread{consumerJson(weather)}
             runOnUiThread { consumeJson(weather) }
 
-        }
+        }*/
 
-        binding.ivAccuweather.setOnClickListener {
+       /* binding.ivAccuweather.setOnClickListener {
             val intent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://developer.accuweather.com/")
             )
             startActivity(intent)
-        }
+        }*/
     }
 
-    fun consumeJson(weatherJSON: String?) {
+   /* fun consumeJson(weatherJSON: String?) {
         if (weatherJSON != null) {
             val gson = Gson()
             val weatherData =
@@ -66,51 +66,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        //this method goes with Forecast class
-        /*fun consumerJson(weatherJSON:String?){
-                    if(fiveDay1List!=null){
-                        fiveDay1List.clear()
-                    }
-                    if (weatherJSON != null){
-                        try{
-                            //get the root JSON object
-                            val rootWeatherData = JSONObject(weatherJSON)
 
-                            //find the daily forecasts arrays
-                            val fiveDayForecast = rootWeatherData.getJSONArray("DailyForecasts")
-
-                            //get data from each entry in the array
-                            for(i in 0 until fiveDayForecast.length()){
-                                val forecastObject = Forecast()
-                                val dailyWeather = fiveDayForecast.getJSONObject(i)
-
-                                //get date
-                                val date = dailyWeather.getString("Date")
-                                Log.i(LOGGING_TAG,"consumeJson: Date$date")
-                                forecastObject.date = date
-
-                                //get minimum temperature
-                                val temperatureObject = dailyWeather.getJSONObject("Temperature")
-                                val minTempObjects = temperatureObject.getJSONObject("Minimum")
-                                val minTemp = minTempObjects.getString("Value")
-                                Log.i(LOGGING_TAG,"consumeJson: minTemp$minTemp")
-                                forecastObject.minimumTemperature = minTemp
-
-                                //get maximum temperature
-                                val maxTempObjects = temperatureObject.getJSONObject("Maximum")
-                                val maxTemp = maxTempObjects.getString("Value")
-                                Log.i(LOGGING_TAG,"consumeJson: maxTemp$maxTemp")
-                                forecastObject.maximumTemperature = maxTemp
-                                fiveDay1List.add(forecastObject)
-                                binding.tvWeather.append(
-                                    "Date: $date Min: $minTemp Max:$maxTemp \n"
-                                )
-
-                            }
-                        }catch (e: JSONException){
-                            e.printStackTrace()
-                        }
-                    }
-                }*/
-    }
+    }*/
 }
